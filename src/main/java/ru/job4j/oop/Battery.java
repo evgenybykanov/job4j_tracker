@@ -7,16 +7,16 @@ public class Battery {
         this.value = charge;
     }
 
-    public void pour(Battery another) {
-        another.value = 0;
-        this.value = this.value + another.value;
+    public void exchange(Battery another) {
+        another.value = this.value + another.value;
+        this.value = 0;
 
     }
     public static void main(String[] args) {
         Battery first = new Battery(60);
         Battery second = new Battery(40);
         System.out.println("first : " + first.value + ". second : " + second.value);
-        first.pour(second);
+        first.exchange(second);
         System.out.println("first : " + first.value + ". second : " + second.value);
 
     }
