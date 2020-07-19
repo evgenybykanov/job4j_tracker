@@ -8,8 +8,9 @@ public class Battery {
     }
 
     public void pour(Battery another) {
-        this.value = this.value + another.value;
         another.value = 0;
+        this.value = this.value + another.value;
+
     }
     public static void main(String[] args) {
         Battery first = new Battery(60);
