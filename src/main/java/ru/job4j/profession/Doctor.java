@@ -1,4 +1,4 @@
-package ru.job4j.professio;
+package ru.job4j.profession;
 
 public class Doctor extends Profession {
     private int experience;
