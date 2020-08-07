@@ -37,12 +37,14 @@ public class Tracker {
     public boolean replace(int id, Item item) {
         boolean result = false;
         int index = indexOf(id);
-        for (; index < size; index++) {
-            if (items[index].equals(id)) {
-                this.items.add(index, item);
-                result = true;
-                item.setId(id);
-                break;
+        for (indexOf(id) != -1) {
+            for (; index < size; index++) {
+                if (items[index].equals(id)) {
+                    this.items.add(index, item);
+                    result = true;
+                    item.setId(id);
+                    break;
+                }
             }
         }
         return result;
