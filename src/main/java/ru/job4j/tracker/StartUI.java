@@ -5,8 +5,7 @@ public class StartUI {
         Tracker tracker = new Tracker();
         Item item = new Item("id4567", 54);
         tracker.add(item);
-        tracker.findById(54);
-        System.out.println(item);
+        System.out.println(tracker.findById(54));
 
     }
 
