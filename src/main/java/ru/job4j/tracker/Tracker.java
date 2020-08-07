@@ -37,7 +37,7 @@ public class Tracker {
     public boolean replace(int id, Item item) {
         boolean result = false;
         int index = indexOf(id);
-        for (indexOf(id) != -1) {
+        if (indexOf(id) != -1) {
             for (; index < size; index++) {
                 if (items[index].equals(id)) {
                     this.items.add(index, item);
