@@ -3,7 +3,11 @@ package ru.job4j.tracker;
 public class Item {
     private int id;
     private String name;
-    private int key;
+
+
+    public Item() {
+
+    }
 
     public int getId() {
         return id;
@@ -31,14 +35,13 @@ public class Item {
         this.id = id;
     }
 
-    public int getKey() {
-        return key;
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
-
-    public void setKey(int key) {
-        this.key = key;
-    }
-
 }
 
 
