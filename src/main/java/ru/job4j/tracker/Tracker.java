@@ -39,16 +39,14 @@ public class Tracker {
         int index = indexOf(id);
         if (indexOf(id) != -1) {
             for (; index < size; index++) {
-                if (items[index].equals(id)) {
-                    this.items.add(index, item);
-                    result = true;
-                    item.setId(id);
-                    break;
+                item.setId(id);
+                items[index] = item;
+                result = true;
                 }
             }
-        }
         return result;
-    }
+        }
+
 
 
     private int indexOf(int id) {
