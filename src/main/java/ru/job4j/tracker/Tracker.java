@@ -35,8 +35,8 @@ public class Tracker {
 
     @SuppressWarnings("checkstyle:EmptyLineSeparator")
     public boolean replace(int id, Item item) {
-        boolean result = false;
         int index = indexOf(id);
+        boolean result = index != -1;
         if (index != -1) {
                 item.setId(id);
                 items[index] = item;
@@ -46,8 +46,8 @@ public class Tracker {
             }
 
     public boolean delete(int id) {
-        boolean result = false;
         int index = indexOf(id);
+        boolean result = index != -1;
         if (index != -1) {
             System.arraycopy(items, index + 1, items, index, size - index);
             items[size - 1] = null;
