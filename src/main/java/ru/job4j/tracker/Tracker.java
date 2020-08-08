@@ -33,21 +33,17 @@ public class Tracker {
         return Arrays.copyOf(result, number);
     }
 
-
+    @SuppressWarnings("checkstyle:EmptyLineSeparator")
     public boolean replace(int id, Item item) {
         boolean result = false;
         int index = indexOf(id);
-        if (indexOf(id) != -1) {
-            for (; index < size; index++) {
+        if (index != -1) {
                 item.setId(id);
                 items[index] = item;
                 result = true;
                 }
-            }
         return result;
-        }
-
-
+            }
 
     private int indexOf(int id) {
         int rsl = -1;
