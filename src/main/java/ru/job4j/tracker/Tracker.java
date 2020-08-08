@@ -55,7 +55,6 @@ public class Tracker {
         }
         return result;
     }
-
     private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < size; index++) {
