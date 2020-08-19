@@ -2,8 +2,12 @@ package ru.job4j.tracker;
 
 import java.util.Scanner;
 
+import static jdk.nashorn.internal.objects.Global.print;
+
+
 public class StartUI {
 
+    @SuppressWarnings("checkstyle:RightCurly")
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = false;
         while (run) {
@@ -17,8 +21,10 @@ public class StartUI {
                 Item item = new Item(name);
                 tracker.add(item);
             } else if (select == 1) {
-                System.out.println("=== Show all Items ===");
-                tracker.findAll();
+                Item[] items = tracker.findAll();
+                for (Item item : items) {
+                    item.print();
+                }
             } else if (select == 2) {
                 System.out.println("=== Edit an Item ===");
                 System.out.print("Enter ID: ");
@@ -27,25 +33,47 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.replace(id, item);
+                if (tracker.replace(id, Item)) {
+                    System.out.print("success." + System.lineSeparator());
+                } else {
+                    System.out.print("error." + System.lineSeparator());
+
+                }
             } else if (select == 3) {
                 System.out.println("=== Delete Item ===");
                 System.out.print("Enter ID: ");
                 String id = scanner.nextLine();
-                tracker.delete(id);
+                if (tracker.delete(id)) {
+                    System.out.print("success." + System.lineSeparator());
+                } else {
+                    System.out.print(" error." + System.lineSeparator());
+                }
             } else if (select == 4) {
                 System.out.println("=== Find Item by ID ===");
                 System.out.print("Enter ID: ");
                 String id = scanner.nextLine();
-                tracker.findById(id);
-            } else if (select == 5) {
+                if (tracker.findById(id)) {
+                    if (tracker.delete(id)) {
+                        System.out.print("success." + System.lineSeparator());
+                    } else {
+                        System.out.print(" error." + System.lineSeparator());
+                    }
+                }
+            }
+
+            else if (select == 5) {
                 System.out.println("=== Find Items by Name ===");
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
+                Item[] items = tracker.findByName(name);
                 tracker.findByName(name);
+                print(items);
+
             } else if (select == 6) {
                 run = false;
             }
         }
+
     }
 
     private void showMenu() {
@@ -60,6 +88,7 @@ public class StartUI {
         System.out.println("Select:");
 
     }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

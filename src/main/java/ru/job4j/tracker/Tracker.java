@@ -13,7 +13,7 @@ public class Tracker {
         return item;
     }
 
-    public Item findById(int id) {
+    public boolean findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items[index] : null;
     }
@@ -33,7 +33,6 @@ public class Tracker {
         return Arrays.copyOf(result, number);
     }
 
-    @SuppressWarnings("checkstyle:EmptyLineSeparator")
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
         boolean result = index != -1;

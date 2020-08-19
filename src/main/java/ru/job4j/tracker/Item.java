@@ -42,6 +42,10 @@ public class Item {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public void print() {
+    }
+
 }
 
 
