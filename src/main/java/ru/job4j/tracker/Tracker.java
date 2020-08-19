@@ -7,13 +7,14 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
+
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
         return item;
     }
 
-    public Item[] findById(int id) {
+    public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items[index] : null;
     }
@@ -33,7 +34,7 @@ public class Tracker {
         return Arrays.copyOf(result, number);
     }
 
-    public boolean replace(String id, Item item) {
+    public boolean replace(int id, Item item) {
         int index = indexOf(id);
         boolean result = index != -1;
         if (index != -1) {
@@ -44,7 +45,7 @@ public class Tracker {
         return result;
             }
 
-    public boolean delete(String id) {
+    public boolean delete(int id) {
         int index = indexOf(id);
         boolean result = index != -1;
         if (index != -1) {
