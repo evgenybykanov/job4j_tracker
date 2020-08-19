@@ -33,8 +33,7 @@ import java.util.Scanner;
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
-                tracker.replace(id, item);
-                if (tracker.replace(id, Item)) {
+                if (tracker.replace(id, item)) {
                     System.out.print("success." + System.lineSeparator());
                 } else {
                     System.out.print("error." + System.lineSeparator());
@@ -63,13 +62,13 @@ import java.util.Scanner;
                 System.out.println("=== Find Items by Name ===");
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
-                return Arrays.copyOf(items, size);
+                Item item = new Item(name);
                 tracker.findByName(name);
                 System.out.print(item);
-
             } else if (select == 6) {
                 run = false;
             }
+
         }
 
     }
