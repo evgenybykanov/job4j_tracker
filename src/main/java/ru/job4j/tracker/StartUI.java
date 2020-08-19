@@ -3,12 +3,12 @@ package ru.job4j.tracker;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static jdk.nashorn.internal.objects.Global.print;
+
 
 
  public class StartUI {
 
-    @SuppressWarnings("checkstyle:RightCurly")
+     @SuppressWarnings("checkstyle:RightCurly")
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = false;
         while (run) {
@@ -31,7 +31,7 @@ import static jdk.nashorn.internal.objects.Global.print;
                 System.out.print("Enter ID: ");
                 String id = scanner.nextLine();
                 System.out.print("Enter name: ");
-                int name = scanner.nextLine();
+                String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.replace(id, item);
                 if (tracker.replace(id, Item)) {
@@ -93,6 +93,7 @@ import static jdk.nashorn.internal.objects.Global.print;
         Tracker tracker = new Tracker();
         new StartUI().init(scanner, tracker);
     }
+
 }
 
 

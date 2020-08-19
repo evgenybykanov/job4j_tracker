@@ -22,7 +22,7 @@ public class Tracker {
         return Arrays.copyOf(items, size);
     }
 
-    public Item[] findByName(int key) {
+    public Item[] findByName(String key) {
         int number = 0;
         Item[] result = new Item[size];
         for (int index = 0; index != size; index++) {
@@ -65,4 +65,12 @@ public class Tracker {
         return rsl;
     }
 
+    @Override
+    public String toString() {
+        return "Tracker{" +
+                "items=" + Arrays.toString(items) +
+                ", ids=" + ids +
+                ", size=" + size +
+                '}';
+    }
 }
