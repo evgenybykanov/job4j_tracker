@@ -1,11 +1,12 @@
 package ru.job4j.tracker;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static jdk.nashorn.internal.objects.Global.print;
 
 
-public class StartUI {
+ public class StartUI {
 
     @SuppressWarnings("checkstyle:RightCurly")
     public void init(Scanner scanner, Tracker tracker) {
@@ -23,14 +24,14 @@ public class StartUI {
             } else if (select == 1) {
                 Item[] items = tracker.findAll();
                 for (Item item : items) {
-                    item.print();
+                    System.out.print(item);
                 }
             } else if (select == 2) {
                 System.out.println("=== Edit an Item ===");
                 System.out.print("Enter ID: ");
                 String id = scanner.nextLine();
                 System.out.print("Enter name: ");
-                String name = scanner.nextLine();
+                int name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.replace(id, item);
                 if (tracker.replace(id, Item)) {
@@ -55,19 +56,16 @@ public class StartUI {
                 if (tracker.findById(id)) {
                     if (tracker.delete(id)) {
                         System.out.print("success." + System.lineSeparator());
-                    } else {
-                        System.out.print(" error." + System.lineSeparator());
+
                     }
                 }
-            }
-
-            else if (select == 5) {
+            } else if (select == 5) {
                 System.out.println("=== Find Items by Name ===");
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
-                Item[] items = tracker.findByName(name);
+                return Arrays.copyOf(items, size);
                 tracker.findByName(name);
-                print(items);
+                System.out.print(item);
 
             } else if (select == 6) {
                 run = false;
