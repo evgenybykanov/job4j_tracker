@@ -66,12 +66,4 @@ public class Tracker {
         return rsl;
     }
 
-    @Override
-    public String toString() {
-        return "Tracker{" +
-                "items=" + Arrays.toString(items) +
-                ", ids=" + ids +
-                ", size=" + size +
-                '}';
-    }
 }
