@@ -101,7 +101,7 @@ package ru.job4j.tracker;
                  System.out.println("Select:");
              }
 
-             public static void main (String[]args){
+             public static void main (String[]args) {
                  Input input = new ConsoleInput();
                  Tracker tracker = new Tracker();
                  new StartUI().init(input, tracker);
