@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 
 
+ @SuppressWarnings("checkstyle:EmptyLineSeparator")
  public class StartUI {
 
     public void init(Input input, Tracker tracker) {
@@ -23,7 +24,7 @@ package ru.job4j.tracker;
             } else if (select == 2) {
                 System.out.println("=== Edit an Item ===");
                 System.out.print("Enter ID: ");
-                int id = input.askStr("");
+                int id = Integer.parseInt(input.askStr(""));
                 System.out.print("Enter name: ");
                 String name =  input.askStr("");
                 Item item = new Item(name);
@@ -36,7 +37,7 @@ package ru.job4j.tracker;
             } else if (select == 3) {
                 System.out.println("=== Delete Item ===");
                 System.out.print("Enter ID: ");
-                int id = input.askStr(" ");
+                int id = Integer.parseInt(input.askStr(""));
                 if (tracker.delete(id)) {
                     System.out.print("success." + System.lineSeparator());
                 } else {
@@ -45,7 +46,7 @@ package ru.job4j.tracker;
             } else if (select == 4) {
                 System.out.println("=== Find Item by ID ===");
                 System.out.print("Enter ID: ");
-                int id = input.askStr("");
+                int id = Integer.parseInt(input.askStr(""));
                 Item item = tracker.findById(id);
                     if (item != null) {
                         System.out.print(item + System.lineSeparator());
@@ -69,6 +70,7 @@ package ru.job4j.tracker;
         }
 
     }
+    @SuppressWarnings("checkstyle:EmptyLineSeparator")
     private void showMenu() {
         System.out.println("Menu.");
         System.out.println("0. Add new Item");
