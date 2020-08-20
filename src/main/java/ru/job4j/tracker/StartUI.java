@@ -49,7 +49,8 @@ import java.util.Scanner;
                 System.out.print("Enter ID: ");
                 Scanner sc = new Scanner(System.in);
                 int id = sc.nextInt();
-                    if (tracker.findById(id)) {
+                Item item = tracker.findById(id);
+                    if (item != null) {
                         System.out.print("success." + System.lineSeparator());
                     } else {
                         System.out.print("item not found");
