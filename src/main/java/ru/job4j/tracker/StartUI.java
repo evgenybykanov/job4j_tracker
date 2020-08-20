@@ -17,29 +17,43 @@ package ru.job4j.tracker;
          int id = Integer.parseInt(input.askStr("Enter ID: "));
          String name = input.askStr("Enter name: ");
          Item item = new Item(name);
-         tracker.replace(id, item);
+         if (tracker.replace(id, item)) {
+             System.out.println("Item change");
+         } else {
+             System.out.println("Item on id " + id + "not found");
+         }
      }
 
      public static void deleteItem(Input input, Tracker tracker) {
          System.out.println("=== Delete Item ===");
          int id = Integer.parseInt(input.askStr("Enter ID: "));
-         tracker.delete(id);
+         if (tracker.delete(id)) {
+             System.out.println("Item delete");
+         } else {
+             System.out.println("Item on id " + id + "not found");
+         }
      }
 
      public static void FinditembyId(Input input, Tracker tracker) {
          System.out.println("=== Edit an Item ===");
          int id = Integer.parseInt(input.askStr("Enter ID: "));
-         tracker.findById(id);
+         if (tracker.findById(id)) {
+             System.out.println("Item found");
+         } else {
+             System.out.println("Item on id " + id + "not found");
+         }
      }
 
 
      public static void findByName(Input input, Tracker tracker) {
          System.out.println("=== Find Item by name ===");
          String name = input.askStr("Enter name: ");
-         Item item = new Item(name);
-         tracker.findByName(item);
+         if (tracker.findByName(name)) {
+             System.out.println("Item found");
+         } else {
+             System.out.println("Item on id " + name + "not found");
+         }
      }
-
 
      public void init(Input input, Tracker tracker) {
          boolean run = true;
@@ -87,28 +101,27 @@ package ru.job4j.tracker;
 
                  }
 
-             }
 
-             private void showMenu () {
-                 System.out.println("Menu.");
-                 System.out.println("0. Add new Item");
-                 System.out.println("1. Show all items");
-                 System.out.println("2. Edit item");
-                 System.out.println("3. Delete item");
-                 System.out.println("4. Find item by Id");
-                 System.out.println("5. Find items by name");
-                 System.out.println("6. Exit Program");
-                 System.out.println("Select:");
-             }
+                 private void showMenu () {
+                     System.out.println("Menu.");
+                     System.out.println("0. Add new Item");
+                     System.out.println("1. Show all items");
+                     System.out.println("2. Edit item");
+                     System.out.println("3. Delete item");
+                     System.out.println("4. Find item by Id");
+                     System.out.println("5. Find items by name");
+                     System.out.println("6. Exit Program");
+                     System.out.println("Select:");
+                 }
 
-             public static void main (String[]args) {
-                 Input input = new ConsoleInput();
-                 Tracker tracker = new Tracker();
-                 new StartUI().init(input, tracker);
-             }
+                 public static void main (String[]args){
+                     Input input = new ConsoleInput();
+                     Tracker tracker = new Tracker();
+                     new StartUI().init(input, tracker);
+                 }
 
+
+             }
          }
      }
  }
-
-
