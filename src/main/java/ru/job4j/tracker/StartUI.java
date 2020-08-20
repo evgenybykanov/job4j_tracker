@@ -15,8 +15,9 @@ import java.util.Arrays;
 
      public static void findAll(Tracker tracker) {
          System.out.println("=== Show all Items ====");
-         Item item = new Item(tracker);
-         if (Arrays.copyOf() != 0) {
+         Item[] findAll = tracker.findAll();
+         Item item = new Item();
+         if (findAll != 0) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
 
