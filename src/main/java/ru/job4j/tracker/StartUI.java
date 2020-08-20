@@ -51,9 +51,9 @@ import java.util.Scanner;
                 int id = sc.nextInt();
                 Item item = tracker.findById(id);
                     if (item != null) {
-                        System.out.print("success." + System.lineSeparator());
+                        System.out.print(item + System.lineSeparator());
                     } else {
-                        System.out.print("item not found");
+                        System.out.print("item not found" + System.lineSeparator());
                     }
 
             } else if (select == 5) {
@@ -62,7 +62,7 @@ import java.util.Scanner;
                 String name = scanner.nextLine();
                 Item[] items = tracker.findByName(name);
                 for (Item item : items) {
-                    System.out.print(item);
+                    System.out.print(item + System.lineSeparator());
                 }
 
             } else if (select == 6) {
@@ -72,7 +72,6 @@ import java.util.Scanner;
         }
 
     }
-
     private void showMenu() {
         System.out.println("Menu.");
         System.out.println("0. Add new Item");
@@ -84,6 +83,7 @@ import java.util.Scanner;
         System.out.println("6. Exit Program");
         System.out.println("Select:");
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Tracker tracker = new Tracker();
