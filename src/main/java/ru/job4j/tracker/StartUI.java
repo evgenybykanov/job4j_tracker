@@ -15,10 +15,8 @@ import java.util.Arrays;
 
      public static void findAll(Tracker tracker) {
          System.out.println("=== Show all Items ====");
-         Item item = new Item();
          Item[] all = tracker.findAll();
-         int index = 1;
-          for (index = 0; index <= Arrays.copyOf(all); index++) {
+          for (Item item : all) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
 
@@ -64,7 +62,6 @@ import java.util.Arrays;
          System.out.println("=== Find Item by name ===");
          String name = input.askStr("Enter name: ");
          Item[] itemsname = tracker.findByName(name);
-
              for (Item item : itemsname) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
