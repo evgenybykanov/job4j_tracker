@@ -4,7 +4,11 @@ package ru.job4j.tracker;
 
  @SuppressWarnings("checkstyle:EmptyLineSeparator")
  public class StartUI {
+     public static void findAll (Tracker tracker){
+         System.out.println("=== Show all Items ====");
+         tracker.findAll();
 
+     }
      public static void createItem(Input input, Tracker tracker) {
          System.out.println("=== Create a new Item ====");
          String name = input.askStr("Enter name: ");
@@ -63,44 +67,18 @@ package ru.job4j.tracker;
              if (select == 0) {
                  StartUI.createItem(input, tracker);
              } else if (select == 1) {
-                 Item[] items = tracker.findAll();
-                 for (Item item : items) {
-                     System.out.print(item);
-                 }
+                StartUI.findAll(Tracker tracer);
              } else if (select == 2) {
-                 if (StartUI.replaceItem(id, item)) {
-                     System.out.print("success." + System.lineSeparator());
-                 } else {
-                     System.out.print("error." + System.lineSeparator());
-
-                 }
+                 StartUI.replaceItem(id, item);
              } else if (select == 3) {
-                 if (StartUI.deleteItem(id)) {
-                     System.out.print("success." + System.lineSeparator());
-                 } else {
-                     System.out.print(" error." + System.lineSeparator());
-                 }
+                 StartUI.deleteItem(id);
              } else if (select == 4) {
-                 if (StartUI.FinditembyId(id)) {
-                     if (item != null) {
-                         System.out.print(item + System.lineSeparator());
-                     } else {
-                         System.out.print("item not found" + System.lineSeparator());
-                     }
-
-                 } else if (select == 5) {
-                     if (StartUI.findByName(name)) {
-                         Item[] items = tracker.findByName(name);
-                         for (Item item : items) {
-                             System.out.print(item + System.lineSeparator());
-                         }
-
-                     } else if (select == 6) {
+                 StartUI.FinditembyId(id);
+             } else if (select == 5) {
+                     StartUI.findByName(name);
+             } else if (select == 6) {
                          run = false;
                      }
-
-                 }
-
 
                  private void showMenu () {
                      System.out.println("Menu.");
