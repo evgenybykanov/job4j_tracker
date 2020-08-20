@@ -16,9 +16,12 @@ import java.util.Arrays;
      public static void findAll(Tracker tracker) {
          System.out.println("=== Show all Items ====");
          Item item = new Item();
-         if (tracker.findAll() != null) {
+         Item[] all = tracker.findAll();
+         int index = 1;
+          for (index = 0; index <= Arrays.copyOf(all); index++) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
+
          }
      }
 
@@ -46,7 +49,7 @@ import java.util.Arrays;
 
      public static void finditembyId(Input input, Tracker tracker) {
          System.out.println("=== find an Item ===");
-         int id = input.askInt("Enter ID: ");0
+         int id = input.askInt("Enter ID: ");
          Item itemById = tracker.findById(id);
          if (itemById != null) {
              System.out.print("ID: " + itemById.getId() + "; ");
@@ -61,13 +64,12 @@ import java.util.Arrays;
          System.out.println("=== Find Item by name ===");
          String name = input.askStr("Enter name: ");
          Item[] itemsname = tracker.findByName(name);
-         if (itemsname[0] != null) {
+
              for (Item item : itemsname) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
              }
          }
-     }
 
      public void init(Input input, Tracker tracker) {
          boolean run = true;
