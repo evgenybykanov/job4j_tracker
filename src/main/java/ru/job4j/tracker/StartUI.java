@@ -51,7 +51,7 @@ import java.util.Scanner;
                 int id = sc.nextInt();
                 Item item = tracker.findById(id);
                     if (item != null) {
-                        System.out.print(item + System.lineSeparator());
+                        System.out.println(item + System.lineSeparator());
                     } else {
                         System.out.print("item not found" + System.lineSeparator());
                     }
