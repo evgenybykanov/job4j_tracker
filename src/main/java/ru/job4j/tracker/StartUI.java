@@ -49,7 +49,7 @@ import java.util.Scanner;
                 System.out.print("Enter ID: ");
                 Scanner sc = new Scanner(System.in);
                 int id = sc.nextInt();
-                    if (tracker.delete(id)) {
+                    if (tracker.findById(id)) {
                         System.out.print("success." + System.lineSeparator());
                     } else {
                         System.out.print("item not found");
