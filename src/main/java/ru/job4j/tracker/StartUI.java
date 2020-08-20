@@ -1,8 +1,9 @@
 package ru.job4j.tracker;
 
 
+import java.util.Arrays;
 
- @SuppressWarnings("checkstyle:EmptyLineSeparator")
+@SuppressWarnings("checkstyle:EmptyLineSeparator")
  public class StartUI {
 
      public static void addItem(Input input, Tracker tracker) {
@@ -14,10 +15,13 @@ package ru.job4j.tracker;
 
      public static void findAll(Tracker tracker) {
          System.out.println("=== Show all Items ====");
-         tracker.findAll();
+         Item item = new Item(tracker);
+         if (Arrays.copyOf() != 0) {
+                 System.out.print("ID: " + item.getId() + "; ");
+                 System.out.println("Name: " + item.getName());
+
+         }
      }
-
-
 
      public static void editItem(Input input, Tracker tracker) {
          System.out.println("=== replase an Item ===");
@@ -57,9 +61,9 @@ package ru.job4j.tracker;
      public static void findByName(Input input, Tracker tracker) {
          System.out.println("=== Find Item by name ===");
          String name = input.askStr("Enter name: ");
-         Item[] itemsByName = tracker.findByName(name);
-         if (itemsByName[0] != null) {
-             for (Item item : itemsByName) {
+         Item[] itemsname = tracker.findByName(name);
+         if (itemsname[0] != null) {
+             for (Item item : itemsname) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
              }
