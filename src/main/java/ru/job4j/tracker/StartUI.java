@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 
 import java.util.Arrays;
 
-@SuppressWarnings("checkstyle:EmptyLineSeparator")
+
  public class StartUI {
 
      public static void addItem(Input input, Tracker tracker) {
@@ -15,18 +15,16 @@ import java.util.Arrays;
 
      public static void findAll(Tracker tracker) {
          System.out.println("=== Show all Items ====");
-         Item[] findAll = tracker.findAll();
          Item item = new Item();
-         if (findAll != 0) {
+         if (tracker.findAll() != null) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
-
          }
      }
 
      public static void editItem(Input input, Tracker tracker) {
          System.out.println("=== replase an Item ===");
-         int id = Integer.parseInt(input.askStr("Enter ID: "));
+         int id = input.askInt("Enter ID: ");
          String name = input.askStr("Enter name: ");
          Item item = new Item(name);
          if (tracker.replace(id, item)) {
@@ -38,7 +36,7 @@ import java.util.Arrays;
 
      public static void deleteItem(Input input, Tracker tracker) {
          System.out.println("=== input Item ===");
-         int id = Integer.parseInt(input.askStr("Enter ID: "));
+         int id = input.askInt("Enter ID: ");
          if (tracker.delete(id)) {
              System.out.println("Item delete");
          } else {
@@ -48,7 +46,7 @@ import java.util.Arrays;
 
      public static void finditembyId(Input input, Tracker tracker) {
          System.out.println("=== find an Item ===");
-         int id = Integer.parseInt(input.askStr("Enter ID: "));
+         int id = input.askInt("Enter ID: ");0
          Item itemById = tracker.findById(id);
          if (itemById != null) {
              System.out.print("ID: " + itemById.getId() + "; ");
