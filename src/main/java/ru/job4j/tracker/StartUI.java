@@ -15,11 +15,13 @@ import java.util.Arrays;
 
      public static void findAll(Tracker tracker) {
          System.out.println("=== Show all Items ====");
-         Item[] all = tracker.findAll();
-          for (Item item : all) {
+         Item[] findAll = tracker.findAll();
+         if (findAll.length > 0) {
+             for (Item item : findAll) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
 
+             }
          }
      }
 
@@ -62,11 +64,13 @@ import java.util.Arrays;
          System.out.println("=== Find Item by name ===");
          String name = input.askStr("Enter name: ");
          Item[] itemsname = tracker.findByName(name);
+         if (itemsname.length > 0) {
              for (Item item : itemsname) {
                  System.out.print("ID: " + item.getId() + "; ");
                  System.out.println("Name: " + item.getName());
              }
          }
+     }
 
      public void init(Input input, Tracker tracker) {
          boolean run = true;
