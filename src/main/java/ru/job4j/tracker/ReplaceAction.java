@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class EditItemAction implements UserAction {
+public class ReplaceAction implements UserAction {
 
     @Override
     public String name() {

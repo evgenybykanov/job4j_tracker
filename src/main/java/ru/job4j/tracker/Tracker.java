@@ -65,9 +65,6 @@ public class Tracker {
         }
         return rsl;
     }
-    private boolean exit() {
-        return false;
-    }
 
 
 }

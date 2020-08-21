@@ -24,15 +24,16 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
-        /* Добавим в tracker новую заявку */
         Item item = tracker.add(new Item("Replaced item"));
-        /* Входные данные должны содержать ID добавленной заявки item.getId() */
+        tracker.add(item);
         String replacedName = "New item name";
+        tracker.add(new Item(replacedName));
         Input in = new StubInput(
-                new String[] {"0", "New item name", "1"}
+                new String[] {"0", replacedName, "1"
+                }
         );
         UserAction[] actions = {
-                new EditItemAction(),
+                new ReplaceAction(),
                 new ExitAction()
         };
         new StartUI().init(in, tracker, actions);
@@ -43,8 +44,9 @@ public class StartUITest {
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted item"));
+        tracker.add(item);
         Input in = new StubInput(
-                new String[] {"0", "item deleted", "1"}
+                new String[] {"0", String.valueOf(item.getId()), "1"}
         );
         UserAction[] actions = {
                 new DeleteAction(),
