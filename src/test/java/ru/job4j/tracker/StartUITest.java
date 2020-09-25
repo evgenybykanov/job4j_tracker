@@ -73,12 +73,12 @@ public class StartUITest {
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator() +
                         "0. === Find Item by name ===" + System.lineSeparator() +
-                        "1. === Exit menu === " + System.lineSeparator() +
+                        "1. === Exit menu ====" + System.lineSeparator() +
                         "=== Find Item by name ===" + System.lineSeparator() +
-                        "ID: 1;" +
-                        "Name: Find by name item" +
+                        "ID: 1; " + System.lineSeparator() +
+                        "Name: Find by name item" + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
-                        "0. === Find Item by name === " + System.lineSeparator() +
+                        "0. === Find Item by name ===" + System.lineSeparator() +
                         "1. === Exit menu ====" + System.lineSeparator()
         ));
     }
@@ -99,12 +99,12 @@ public class StartUITest {
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator() +
                         "0. === find an Item by Id ===" + System.lineSeparator() +
-                        "1. === Exit menu ===  " + System.lineSeparator() +
-                        "=== find an Item by Id ===" + System.lineSeparator() +
-                        "ID: 1;" +
-                        "Name: Find by id item" +
+                        "1. === Exit menu ====" + System.lineSeparator() +
+                        "=== find an Item ===" + System.lineSeparator() +
+                        "ID: 1; " + System.lineSeparator() +
+                        "Name: Find by id item" + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
-                        "0. === find an Item by Id === " + System.lineSeparator() +
+                        "0. === find an Item by Id ===" + System.lineSeparator() +
                         "1. === Exit menu ====" + System.lineSeparator()
         ));
     }
@@ -124,9 +124,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. === Show all Items ====" + System.lineSeparator() +
                         "1. === Exit menu ===  " + System.lineSeparator() +
-                        "=== find an Item by Id ===" + System.lineSeparator() +
-                        "ID: 1;" +
-                        "Name: Find by all item" +
+                        "ID: 1;" + "Name: " + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. === === Show all Items ==== === " + System.lineSeparator() +
                         "1. === Exit menu ====" + System.lineSeparator()
