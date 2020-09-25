@@ -78,9 +78,8 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find by id item"));
-        String findId = "Item Id";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(item.getId()), findId, "1" }
+                new String[] {"0", String.valueOf(item.getId()),"1" }
         );
         UserAction[] actions = {
                 new FindByIdAction(out),
@@ -95,8 +94,6 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find by all item"));
-        tracker.add(item);
-        String findAllitem = "All item";
         Input in = new StubInput(
                 new String[] {"0", "1"}
         );
@@ -105,7 +102,7 @@ public class StartUITest {
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(tracker.findAll(), is(findAllitem));
+        assertThat(tracker.findAll(out.toString()));
     }
 
 
