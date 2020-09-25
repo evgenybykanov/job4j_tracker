@@ -101,14 +101,14 @@ public class StartUITest {
         tracker.add(item);
         String findAllitem = "All item";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(item.getId()), findAllitem, "1" }
+                new String[] {"0", String.valueOf(item.getId()), String.valueOf(item.getName()), findAllitem, "1"}
         );
         UserAction[] actions = {
                 new FindByIdAction(out),
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
-        assertThat(tracker.findAll(item.getId()), is(findAllitem));
+        assertThat(tracker.findAll(), is(findAllitem));
     }
 
 
