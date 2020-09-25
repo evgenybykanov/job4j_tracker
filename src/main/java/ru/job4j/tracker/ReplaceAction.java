@@ -9,7 +9,7 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== replase an Item ===");
+        System.out.println("=== Replase an Item ===");
         int id = input.askInt("Enter ID: ");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
