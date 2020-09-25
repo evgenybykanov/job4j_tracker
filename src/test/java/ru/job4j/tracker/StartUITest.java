@@ -116,17 +116,17 @@ public class StartUITest {
                 new String[] {"0", "1"}
         );
         UserAction[] actions = {
-                new FindByIdAction(out),
+                new FindAllAction(out),
                 new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 "Menu." + System.lineSeparator() +
                         "0. === Show all Items ====" + System.lineSeparator() +
-                        "1. === Exit menu ===  " + System.lineSeparator() +
-                        "ID: 1;" + "Name: " + System.lineSeparator() +
+                        "1. === Exit menu ====" + System.lineSeparator() +
+                        "=== Show all Items ====" + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
-                        "0. === === Show all Items ==== === " + System.lineSeparator() +
+                        "0. === Show all Items ====" + System.lineSeparator() +
                         "1. === Exit menu ====" + System.lineSeparator()
         ));
     }
