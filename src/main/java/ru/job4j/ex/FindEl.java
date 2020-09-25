@@ -18,7 +18,7 @@ public class FindEl  extends Exception {
     public static void main(String[] args) {
         String[] value = {"1", "b", "3", "d", "5"};
         try {
-            indexOf(value, "");
+            indexOf(value, "c");
         } catch (ElementNotFoundException g) {
             g.printStackTrace();
         }
