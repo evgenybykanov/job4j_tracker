@@ -58,6 +58,61 @@ public class StartUITest {
     }
 
     @Test
+    public void whenFindByNameAction() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Find by name item"));
+        tracker.add(item);
+        String findName = "Item name";
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(item.getName()), findName, "1" }
+        );
+        UserAction[] actions = {
+                new FindByNameAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(tracker.findByName(item.getName()), is(findName));
+    }
+
+    @Test
+    public void whenFindByIdAction() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Find by id item"));
+        tracker.add(item);
+        String findId = "Item Id";
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(item.getId()), findId, "1" }
+        );
+        UserAction[] actions = {
+                new FindByIdAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId()), is(findId));
+    }
+
+    @Test
+    public void whenFindAllAction() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Find by all item"));
+        tracker.add(item);
+        String findAllitem = "All item";
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(item.getId()), findAllitem, "1" }
+        );
+        UserAction[] actions = {
+                new FindByIdAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(tracker.findAll(item.getId()), is(findAllitem));
+    }
+
+
+    @Test
     public void whenExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
