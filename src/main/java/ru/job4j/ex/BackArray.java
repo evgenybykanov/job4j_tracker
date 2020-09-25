@@ -3,7 +3,7 @@ package ru.job4j.ex;
 import java.util.Arrays;
 
 
-    public class BackArray {
+public class BackArray {
         public static void main(String[] args) {
             String[] names = {"Petr", "Ivan", "Nik", "Vasya"};
             int middle = names.length / 2;
