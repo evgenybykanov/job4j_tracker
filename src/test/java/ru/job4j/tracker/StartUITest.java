@@ -152,7 +152,7 @@ public class StartUITest {
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "7"}
+                new String[] {"9", "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
@@ -165,7 +165,7 @@ public class StartUITest {
                                 + "0. === Exit menu ====%n"
                                 + "Wrong input, you can select: 0 .. 0%n"
                                 + "Menu.%n"
-                                + "0. 0. === Exit menu ====%n"
+                                + "0. === Exit menu ====%n"
                 )
         ));
     }
