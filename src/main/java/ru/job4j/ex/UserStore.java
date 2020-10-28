@@ -30,5 +30,6 @@ public class UserStore {
         if (validate(user)) {
             System.out.println("This user has an access");
         }
+
     }
 }
